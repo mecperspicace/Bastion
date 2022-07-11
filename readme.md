@@ -1,7 +1,7 @@
 
 # Bastion
 
-Lightweight and easy-to-usepython script to generate passwords
+Lightweight and easy-to-use python script to generate passwords
 
 
 ## Installation
