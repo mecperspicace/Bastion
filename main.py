@@ -16,13 +16,13 @@ def get(message):
 if __name__ == "__main__":
     load.load()
     all = ""
-    if get("Do you want uppercase letters (y/n)") == "y":
+    if get("Do you want uppercase letters ? (y/n)") == "y":
         all += uppercase_letters
-    if get("Do you want lowercase letters (y/n)") == "y":
+    if get("Do you want lowercase letters ? (y/n)") == "y":
         all += lowercase_letters
-    if get("Do you want numbers (y/n)") == "y":
+    if get("Do you want numbers ? (y/n)") == "y":
         all += numbers
-    if get("Do you want symbols (y/n)") == "y":
+    if get("Do you want symbols ? (y/n)") == "y":
         all += symbols
 
     lenght = int(get("Enter lenght of passwords"))
@@ -30,10 +30,10 @@ if __name__ == "__main__":
 
     f = open("passwords.txt", "w")
 
-    for x in track(range(ammount), description="Generating..."):
+    for x in track(range(ammount), description=f"Generating {ammount} passwords ..."):
         password = "".join(random.sample(all, lenght))
         f.write(password + "\n")
     
     f.close()
     
-    Write.Input("Successfully write passwords in passwords.txt", Colors.yellow_to_green, interval=0.005, hide_cursor=False)
+    Write.Input(f"Successfully write {ammount} passwords in passwords.txt", Colors.yellow_to_green, interval=0.005, hide_cursor=False)
